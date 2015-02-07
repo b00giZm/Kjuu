@@ -18,6 +18,7 @@
 		E76224E11A8248A300639B93 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76224E01A8248A300639B93 /* Realm.framework */; };
 		E76224E41A824BAC00639B93 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76224E31A824BAC00639B93 /* Entry.swift */; };
 		E76224E61A82608900639B93 /* GenericEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76224E51A82608900639B93 /* GenericEntity.swift */; };
+		E7A34DAB1A86437D002114C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A34DAA1A86437D002114C3 /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E76224E01A8248A300639B93 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		E76224E31A824BAC00639B93 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		E76224E51A82608900639B93 /* GenericEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericEntity.swift; sourceTree = "<group>"; };
+		E7A34DAA1A86437D002114C3 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,12 +95,11 @@
 			isa = PBXGroup;
 			children = (
 				E76224E71A8260C000639B93 /* Models */,
-				E76224D81A82476E00639B93 /* Kjuu.entitlements */,
+				E7A34DAA1A86437D002114C3 /* AppConfig.swift */,
 				E76224B81A8244D900639B93 /* AppDelegate.swift */,
 				E76224BA1A8244D900639B93 /* ViewController.swift */,
-				E76224BC1A8244D900639B93 /* Main.storyboard */,
 				E76224BF1A8244D900639B93 /* Images.xcassets */,
-				E76224C11A8244D900639B93 /* LaunchScreen.xib */,
+				E7A34DAC1A864B6B002114C3 /* UI */,
 				E76224B61A8244D900639B93 /* Supporting Files */,
 			);
 			path = Kjuu;
@@ -108,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				E76224B71A8244D900639B93 /* Info.plist */,
+				E76224D81A82476E00639B93 /* Kjuu.entitlements */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -146,6 +148,15 @@
 				E76224E31A824BAC00639B93 /* Entry.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		E7A34DAC1A864B6B002114C3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E76224C11A8244D900639B93 /* LaunchScreen.xib */,
+				E76224BC1A8244D900639B93 /* Main.storyboard */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,9 @@
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 3PEAL2U524;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
@@ -276,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E76224E61A82608900639B93 /* GenericEntity.swift in Sources */,
+				E7A34DAB1A86437D002114C3 /* AppConfig.swift in Sources */,
 				E76224E41A824BAC00639B93 /* Entry.swift in Sources */,
 				E76224BB1A8244D900639B93 /* ViewController.swift in Sources */,
 				E76224B91A8244D900639B93 /* AppDelegate.swift in Sources */,
