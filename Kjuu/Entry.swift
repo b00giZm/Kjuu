@@ -22,17 +22,22 @@ protocol EntryProtocol: GenericEntity {
     var archivedAt: NSDate? { get set }
 }
 
+// Workaround, see https://github.com/realm/realm-cocoa/issues/1024
+class DateObject: RLMObject {
+    dynamic var date: NSDate = NSDate()
+}
+
 class EntryCache: RLMObject {
     dynamic var id = ""
     dynamic var url = ""
     dynamic var title = ""
     dynamic var descriptions = ""
-    dynamic var dateReminder: NSDate?
+    dynamic var dateReminder: DateObject?
     dynamic var latitude: Double = 0.0
     dynamic var longitude: Double = 0.0
     dynamic var createdAt = NSDate()
     dynamic var updatedAt = NSDate()
-    dynamic var archivedAt: NSDate?
+    dynamic var archivedAt: DateObject?
     
     override class func primaryKey() -> String {
         return "id"
@@ -169,7 +174,9 @@ extension Entry: Cachable {
         
         switch(notificationType) {
         case .Date(let date):
-            entryCache.dateReminder = date
+            let dateObject = DateObject()
+            dateObject.date = date
+            entryCache.dateReminder = dateObject
         case .Location(let location):
             entryCache.latitude = location.location.coordinate.latitude
             entryCache.longitude = location.location.coordinate.longitude
@@ -184,7 +191,9 @@ extension Entry: Cachable {
         }
         
         if let archivedAt = archivedAt {
-            entryCache.archivedAt = archivedAt
+            let dateObject = DateObject()
+            dateObject.date = archivedAt
+            entryCache.archivedAt = dateObject
         }
         
         return entryCache
@@ -198,15 +207,15 @@ extension Entry: Cachable {
         entry.title = realmObject.title
         entry.description = realmObject.descriptions
         
-        if let date = realmObject.dateReminder {
+        if let date = realmObject.dateReminder?.date {
             entry.notificationType = .Date(date: date)
         } else {
             let location = CLLocation(latitude: realmObject.latitude, longitude: realmObject.longitude)
             entry.notificationType = .Location(location: location)
         }
         
-        if let archivedAt = realmObject.archivedAt {
-            entry.archivedAt = archivedAt
+        if let date = realmObject.archivedAt?.date {
+            entry.archivedAt = date
         }
         
         return entry
