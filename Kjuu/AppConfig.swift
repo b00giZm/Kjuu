@@ -10,7 +10,7 @@ import Foundation
 
 public class AppConfig {
     private struct Defaults {
-        static let realmDatabaseFileName = "db"
+        static let realmDatabaseFileName = "db.realm"
     }
     
     public struct Extension {
