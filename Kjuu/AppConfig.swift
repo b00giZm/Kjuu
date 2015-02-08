@@ -36,4 +36,8 @@ public class AppConfig {
         
         return nil
     }
+    
+    public class var customRecordZoneName: String? {
+        return "Kjuu"
+    }
 }

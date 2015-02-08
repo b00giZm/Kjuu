@@ -29,6 +29,7 @@ class DateObject: RLMObject {
 
 class EntryCache: RLMObject {
     dynamic var id = ""
+    dynamic var serverId = ""
     dynamic var url = ""
     dynamic var title = ""
     dynamic var descriptions = ""
@@ -136,7 +137,7 @@ class Entry: EntryProtocol {
     }
     
     convenience init() {
-        let record = CKRecord(recordType: "Entry")
+        let record = CKRecord(recordType: "Entry", zoneID: CKRecordZone(zoneName: AppConfig.customRecordZoneName).zoneID)
         self.init(record: record)
     }
 }
@@ -162,6 +163,11 @@ extension Entry: Cachable {
         let entryCache = EntryCache()
         
         entryCache.id = localId
+        
+        if let serverId = id {
+            entryCache.serverId = serverId
+        }
+        
         entryCache.url = url
         
         if let title = title {
