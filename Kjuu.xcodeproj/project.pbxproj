@@ -20,6 +20,7 @@
 		E76224E61A82608900639B93 /* GenericEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76224E51A82608900639B93 /* GenericEntity.swift */; };
 		E7A34DAB1A86437D002114C3 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A34DAA1A86437D002114C3 /* AppConfig.swift */; };
 		E7A34DAE1A864D00002114C3 /* EntryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A34DAD1A864D00002114C3 /* EntryManager.swift */; };
+		E7A34DB01A877408002114C3 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A34DAF1A877408002114C3 /* RLMSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E76224E51A82608900639B93 /* GenericEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericEntity.swift; sourceTree = "<group>"; };
 		E7A34DAA1A86437D002114C3 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		E7A34DAD1A864D00002114C3 /* EntryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryManager.swift; sourceTree = "<group>"; };
+		E7A34DAF1A877408002114C3 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		E76224E71A8260C000639B93 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E7A34DAF1A877408002114C3 /* RLMSupport.swift */,
 				E76224E51A82608900639B93 /* GenericEntity.swift */,
 				E76224E31A824BAC00639B93 /* Entry.swift */,
 				E7A34DAD1A864D00002114C3 /* EntryManager.swift */,
@@ -294,6 +297,7 @@
 			files = (
 				E7A34DAE1A864D00002114C3 /* EntryManager.swift in Sources */,
 				E76224E61A82608900639B93 /* GenericEntity.swift in Sources */,
+				E7A34DB01A877408002114C3 /* RLMSupport.swift in Sources */,
 				E7A34DAB1A86437D002114C3 /* AppConfig.swift in Sources */,
 				E76224E41A824BAC00639B93 /* Entry.swift in Sources */,
 				E76224BB1A8244D900639B93 /* ViewController.swift in Sources */,
