@@ -21,5 +21,5 @@ protocol Cachable {
     
     func toRealmObject() -> T
     
-    class func fromRealmObject(realmObject: T) -> Self
+    static func fromRealmObject(realmObject: T) -> Self
 }

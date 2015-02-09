@@ -106,7 +106,7 @@ class EntryManager: EntryManagerPrototol {
                             
                             let results = EntryCache.objectsWithPredicate(NSPredicate(format: "serverId IN %@", deletedServerIDs))
                             for object in results {
-                                let cachedEntry = object as EntryCache
+                                let cachedEntry = object as! EntryCache
                                 if let dateReminder = cachedEntry.dateReminder {
                                     realm.deleteObject(dateReminder)
                                 }
@@ -131,7 +131,7 @@ class EntryManager: EntryManagerPrototol {
     func getAllCachedEntries() -> [Entry] {
         var entries = [Entry]()
         for object in EntryCache.allObjects() {
-            entries.append(Entry.fromRealmObject(object as EntryCache))
+            entries.append(Entry.fromRealmObject(object as! EntryCache))
         }
         
         return entries

@@ -56,7 +56,7 @@ class Entry: EntryProtocol {
     
     var url: String {
         get {
-            return record.objectForKey("url") as String
+            return record.objectForKey("url") as! String
         }
         
         set {
@@ -66,7 +66,7 @@ class Entry: EntryProtocol {
     
     var title: String? {
         get {
-            return record.objectForKey("title") as String?
+            return record.objectForKey("title") as! String?
         }
         
         set {
@@ -76,7 +76,7 @@ class Entry: EntryProtocol {
     
     var description: String? {
         get {
-            return record.objectForKey("description") as String?
+            return record.objectForKey("description") as! String?
         }
         
         set {
@@ -122,7 +122,7 @@ class Entry: EntryProtocol {
     
     var archivedAt: NSDate? {
         get {
-            return record.objectForKey("archivedAt") as NSDate?
+            return record.objectForKey("archivedAt") as! NSDate?
         }
         
         set {
@@ -147,7 +147,7 @@ extension Entry: Cachable {
     
     var localId: String {
         get {
-            if let localId = record.objectForKey("localId") as String? {
+            if let localId = record.objectForKey("localId") as! String? {
                 return localId
             }
             
